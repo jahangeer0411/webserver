@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+   commands:
+     - echo Build started on 'date'
+     - echo Building the Docker image...
+     - docker build -t web:1 .
+     - docker tag web:1 390138542770.dkr.ecr.us-east-1.amazonaws.com/jahangeer:latest
+post_build:
+     - echo Build completed on 'date'
+     - echp Pushing the Docker image...
+     - echo push 390138542770.dkr.ecr.us-east-1.amazonaws.com/jahangeer:latest
